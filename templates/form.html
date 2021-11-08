@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>Food Recommendation</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<style type="text/css">
+.form-style-8{
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 600px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 60px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-8 h3{
+	background: #4D4D4D;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 20px;
+	margin: -30px -30px 30px -30px;
+}
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 6px;
+	border: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 14px;
+	font: 15px Arial, Helvetica, sans-serif;
+	height: 35px;
+}
+.form-style-8 textarea{
+	resize:none;
+	overflow: hidden;
+}
+.form-style-8 input[type="button"],
+.form-style-8 input[type="submit"]{
+
+	background-color: #B0CA35;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+    border-radius: 4px;
+}
+.form-style-8 input[type="button"]:hover,
+.form-style-8 input[type="submit"]:hover {
+border: 2px solid #B0CA35;
+	background-color:white;
+    color: #B0CA35;
+border-radius: 4px;
+}
+    a[type=button]{
+        background-color: grey;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+        border-radius: 4px;
+    }
+    a[type=button]:hover{
+        background-color:white;
+    border: 2px solid grey;
+        color: grey;
+        border-radius: 4px;
+    }
+</style>
+
+  </head>
+
+  <body style="background-image: url({{ url_for('static', filename='background_2.jpg') }}); background-repeat: no-repeat; background-attachment: fixed; background-size: cover">
+
+
+  <div class="form-style-8">
+  <div class="container">
+    <h3>Food Recommendation</h3>
+
+
+
+    <form method="POST">
+      <div class="form__fieldset">
+        <label for="date" class="form__label">Date:</label>
+        <input type="date" name="date" id="date"  />
+      </div>
+
+      <div class="form__fieldset">
+         <label for="account" class="form__label">Sweet food/ Salty food:</label>
+        <select name="plat_sale_sucre" id="account">
+          <option value="Salé">Salty</option>
+          <option value="Sucré">Sweet</option>
+
+        </select>
+      </div>
+
+      <div class="form__fieldset">
+         <label for="account" class="form__label">Hot meal/ Cold meal:</label>
+        <select name="plat_chaud_froid" id="account" >
+          <option value="Plat Froid">Cold</option>
+          <option value="Plat Chaud">Hot</option>
+
+        </select>
+      </div>
+
+      <div class="form__fieldset">
+        <label for="account" class="form__label">Doughy food:</label>
+        <select name="plat_pates_non_pates" id="account" >
+          <option value=" Pates"> Dough</option>
+          <option value="Pas de pates">No dough</option>
+
+        </select>
+      </div>
+
+      <div class="form__fieldset">
+        <label for="account" class="form__label">Are you:</label>
+        <select name="carnivore_vegetarien" id="account">
+          <option value="Carnivore">Carnivorous</option>
+          <option value="Vegetarien">Vegetarian</option>
+          <option value="Vegan">Vegan</option>
+
+        </select>
+      </div>
+      <div class="form__fieldset">
+        <label for="account" class="form__label">Do you have Diabetes:</label>
+        <select name="diabetique_non_diabetique" id="account">
+          <option value="diabétique">Yes I do</option>
+          <option value="non diabétique">No I don't</option>
+
+        </select>
+      </div><br>
+
+      <div class="form__fieldset">
+        <input
+          class="form__submit form__input"
+          type="submit"
+          value="Confirm choices"
+        />
+        <a type="button" class="form__submit form__input" href="http://127.0.0.1:5000/transactions">
+            Get suggestions
+        </a>
+      </div>
+    </form>
+    </div>
+  </div>
+
+  </body>
+</html>
